@@ -10,7 +10,7 @@
     dest: "/etc/nginx/conf.d/site-{{ item }}.conf"
     owner: root
     group: root
-    mode: 0644
+    mode: 0o644
   loop: "{{ sites }}"
   notify: Restart Nginx
 
@@ -20,7 +20,7 @@
     state: directory
     owner: root
     group: root
-    mode: 0644
+    mode: 0o644
   loop: "{{ sites }}"
 
 - name: Copy indeces from templates
@@ -29,5 +29,5 @@
     dest: "/var/www/{{ item }}/index.html"
     owner: root
     group: root
-    mode: 0644
+    mode: 0o644
   loop: "{{ sites }}"

@@ -2,7 +2,7 @@
 - name: LAB6 Nginx vhosts
   hosts: nginx
   become: true
-  become_method: sudo
+  become_method: ansible.builtin.sudo
   gather_facts: false
 
   vars:
@@ -11,5 +11,5 @@
       - "mehmat.com"
       - "biofak.com"
 
-  roles: 
+  roles:
     - role: lab6_ansible_vhosts

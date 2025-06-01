@@ -1,0 +1,15 @@
+---
+- name: LAB6 Nginx vhosts
+  hosts: nginx
+  become: true
+  become_method: sudo
+  gather_facts: false
+
+  vars:
+    sites:
+      - "fizfak.com"
+      - "mehmat.com"
+      - "biofak.com"
+
+  roles: 
+    - role: lab6_ansible_vhosts
